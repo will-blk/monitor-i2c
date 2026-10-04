@@ -1,0 +1,8 @@
+{
+    "uuid": "ddcci-controls@local",
+    "name": "DDC/CI Monitor Controls",
+    "description": "Control brightness, contrast, color preset, input, picture mode and power of DDC/CI monitors",
+    "author": "will",
+    "version": "1.0.0",
+    "max-instances": "-1"
+}
