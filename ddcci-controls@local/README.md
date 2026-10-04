@@ -24,13 +24,16 @@ sudo usermod -aG i2c "$USER"
 
 Saia e entre novamente na sessão depois de adicionar o usuário ao grupo `i2c`.
 
-## Instalação local
+## Vincular ao diretório de widgets do Mint
 
-O diretório executável do applet é `files/ddcci-controls@local`. Para criar um link simbólico durante o desenvolvimento:
+O Cinnamon/Mint carrega widgets (applets) de `~/.local/share/cinnamon/applets`.
+Execute na raiz do repositório:
 
 ```bash
 mkdir -p ~/.local/share/cinnamon/applets
-ln -sfn "$(pwd)/ddcci-controls@local/files/ddcci-controls@local" ~/.local/share/cinnamon/applets/ddcci-controls@local
+ln -sfn "$(pwd)/ddcci-controls@local/files/ddcci-controls@local" \
+  ~/.local/share/cinnamon/applets/ddcci-controls@local
+readlink -f ~/.local/share/cinnamon/applets/ddcci-controls@local
 ```
 
 Depois adicione **DDC/CI Monitor Controls** em Configurações do sistema → Applets.

@@ -49,19 +49,26 @@ ddcutil capabilities
 Se aparecer `Permission denied` para `/dev/i2c-*`, confirme que a sessão foi
 reiniciada e que `id -nG` inclui `i2c`.
 
-## Instalação do widget/applet
+## Vincular o widget ao Linux Mint
 
-A estrutura compatível com Cinnamon Spices está em
-`ddcci-controls@local/files/ddcci-controls@local`. Para instalar a versão do
-projeto sem copiar os arquivos, crie um link simbólico:
+O Cinnamon/Mint carrega widgets (applets) do diretório
+`~/.local/share/cinnamon/applets`. Para vincular a pasta deste projeto ao
+diretório de widgets, execute o comando abaixo na raiz do repositório:
 
 ```bash
 mkdir -p ~/.local/share/cinnamon/applets
-ln -sfn "$(pwd)/ddcci-controls@local/files/ddcci-controls@local" \\
+ln -sfn "$(pwd)/ddcci-controls@local/files/ddcci-controls@local" \
   ~/.local/share/cinnamon/applets/ddcci-controls@local
 ```
 
-O comando acima deve ser executado na raiz deste repositório. Em seguida:
+O link pode ser conferido com:
+
+```bash
+readlink -f ~/.local/share/cinnamon/applets/ddcci-controls@local
+```
+
+O resultado deve terminar em
+`ddcci-controls@local/files/ddcci-controls@local`. Em seguida:
 
 1. Abra **Configurações do sistema → Applets**.
 2. Adicione **DDC/CI Monitor Controls** ao painel.
